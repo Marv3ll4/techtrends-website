@@ -5,6 +5,8 @@ import Home from './components/pages/Home';
 import About from './components/pages/About';
 import Contact from './components/pages/Contact';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './style.css';
+
 
 function App() {
   return (

@@ -3,9 +3,7 @@ import React, { useState } from 'react';
 function Contact() {
   const [form, setForm] = useState({ name: '', email: '', message: '' });
 
-  const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
-  };
+  const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -13,22 +11,22 @@ function Contact() {
   };
 
   return (
-    <div className="container mt-4">
-      <h1>Contact Us</h1>
-      <form onSubmit={handleSubmit}>
+    <div className="container">
+      <h1 className="mb-4">Contact Us</h1>
+      <form onSubmit={handleSubmit} className="shadow p-4 rounded bg-white">
         <div className="mb-3">
-          <label>Name</label>
-          <input name="name" type="text" className="form-control" onChange={handleChange} />
+          <label className="form-label">Name</label>
+          <input name="name" type="text" className="form-control" onChange={handleChange} required />
         </div>
         <div className="mb-3">
-          <label>Email</label>
-          <input name="email" type="email" className="form-control" onChange={handleChange} />
+          <label className="form-label">Email</label>
+          <input name="email" type="email" className="form-control" onChange={handleChange} required />
         </div>
         <div className="mb-3">
-          <label>Message</label>
-          <textarea name="message" className="form-control" rows="5" onChange={handleChange}></textarea>
+          <label className="form-label">Message</label>
+          <textarea name="message" className="form-control" rows="5" onChange={handleChange} required></textarea>
         </div>
-        <button className="btn btn-primary" type="submit">Send Message</button>
+        <button className="btn btn-primary w-100" type="submit">Send Message</button>
       </form>
     </div>
   );
